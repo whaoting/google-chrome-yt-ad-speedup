@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const videoSpeedValue = document.getElementById("videoSpeedValue");
   const statusElement = document.getElementById("status");
   const resetButton = document.getElementById("resetButton");
+  const adSpeedQuickSelect = document.getElementById("adSpeedQuickSelect");
+  const videoSpeedQuickSelect = document.getElementById(
+    "videoSpeedQuickSelect"
+  );
 
   // 預設設置值
   const defaultSettings = {
@@ -123,6 +127,22 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
+  // 設置廣告速度的函數
+  function setAdSpeed(speed) {
+    const value = parseFloat(speed);
+    adSpeedSlider.value = value;
+    adSpeedValue.textContent = `${value.toFixed(1)}x`;
+    saveSettings();
+  }
+
+  // 設置影片速度的函數
+  function setVideoSpeed(speed) {
+    const value = parseFloat(speed);
+    videoSpeedSlider.value = value;
+    videoSpeedValue.textContent = `${value.toFixed(2)}x`;
+    saveSettings();
+  }
+
   // 監聽廣告速度滑塊變化
   adSpeedSlider.addEventListener("input", () => {
     const value = parseFloat(adSpeedSlider.value);
@@ -147,4 +167,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 監聽恢復預設按鈕點擊事件
   resetButton.addEventListener("click", resetToDefaults);
+
+  // 監聽廣告速度快速選擇按鈕點擊事件
+  adSpeedQuickSelect.querySelectorAll(".quick-select-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      const speed = button.getAttribute("data-value");
+      setAdSpeed(speed);
+    });
+  });
+
+  // 監聽影片速度快速選擇按鈕點擊事件
+  videoSpeedQuickSelect
+    .querySelectorAll(".quick-select-btn")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        const speed = button.getAttribute("data-value");
+        setVideoSpeed(speed);
+      });
+    });
 });

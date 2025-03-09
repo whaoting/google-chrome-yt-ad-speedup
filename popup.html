@@ -142,6 +142,45 @@
       transform: translateY(0);
       box-shadow: none;
     }
+    
+    /* 快速選擇鍵樣式 */
+    .quick-select {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    
+    .quick-select-btn {
+      flex: 1;
+      margin: 0 3px;
+      padding: 5px 0;
+      background-color: #f5f5f5;
+      color: #333;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 11px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .quick-select-btn:hover {
+      background-color: #e0e0e0;
+      transform: translateY(-1px);
+    }
+    
+    .quick-select-btn:active {
+      transform: translateY(0);
+      background-color: #d0d0d0;
+    }
+    
+    .quick-select-btn:first-child {
+      margin-left: 0;
+    }
+    
+    .quick-select-btn:last-child {
+      margin-right: 0;
+    }
   </style>
 </head>
 <body>
@@ -153,6 +192,13 @@
       <input type="range" id="adSpeed" min="1" max="32" step="0.5" value="4">
       <span class="value-display" id="adSpeedValue">4.0x</span>
     </div>
+    <div class="quick-select" id="adSpeedQuickSelect">
+      <button class="quick-select-btn" data-value="1">1倍</button>
+      <button class="quick-select-btn" data-value="2">2倍</button>
+      <button class="quick-select-btn" data-value="4">4倍</button>
+      <button class="quick-select-btn" data-value="16">16倍</button>
+      <button class="quick-select-btn" data-value="32">32倍</button>
+    </div>
   </div>
   
   <div class="setting-group">
@@ -160,6 +206,13 @@
     <div class="slider-container">
       <input type="range" id="videoSpeed" min="0.25" max="2" step="0.25" value="1">
       <span class="value-display" id="videoSpeedValue">1.0x</span>
+    </div>
+    <div class="quick-select" id="videoSpeedQuickSelect">
+      <button class="quick-select-btn" data-value="0.75">0.75倍</button>
+      <button class="quick-select-btn" data-value="1">1倍</button>
+      <button class="quick-select-btn" data-value="1.5">1.5倍</button>
+      <button class="quick-select-btn" data-value="1.75">1.75倍</button>
+      <button class="quick-select-btn" data-value="2">2倍</button>
     </div>
   </div>
   
