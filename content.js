@@ -1,6 +1,6 @@
 // 存儲用戶設置
 let settings = {
-  adSpeed: 2.0, // 廣告默認加速 2 倍
+  adSpeed: 4.0, // 廣告默認加速 4 倍
   videoSpeed: 1.0, // 影片默認正常速度
 };
 

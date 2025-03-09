@@ -4,7 +4,7 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.get(["adSpeed", "videoSpeed"], (data) => {
     // 只有在設置不存在時才設置默認值
     const settings = {
-      adSpeed: data.adSpeed !== undefined ? data.adSpeed : 2.0,
+      adSpeed: data.adSpeed !== undefined ? data.adSpeed : 4.0,
       videoSpeed: data.videoSpeed !== undefined ? data.videoSpeed : 1.0,
     };
 
@@ -21,7 +21,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     chrome.storage.sync.get(["adSpeed", "videoSpeed"], (data) => {
       // 確保返回有效的設置值，如果不存在則使用默認值
       sendResponse({
-        adSpeed: data.adSpeed !== undefined ? data.adSpeed : 2.0,
+        adSpeed: data.adSpeed !== undefined ? data.adSpeed : 4.0,
         videoSpeed: data.videoSpeed !== undefined ? data.videoSpeed : 1.0,
       });
     });
