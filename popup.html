@@ -114,6 +114,34 @@
       animation: fadeIn 0.3s ease-out 0.1s forwards;
       opacity: 0;
     }
+    
+    /* 恢復預設按鈕樣式 */
+    .reset-button {
+      display: block;
+      width: 120px;
+      margin: 15px auto 0;
+      padding: 8px 0;
+      background-color: #f0f0f0;
+      color: #333;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .reset-button:hover {
+      background-color: #e0e0e0;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .reset-button:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
   </style>
 </head>
 <body>
@@ -134,6 +162,8 @@
       <span class="value-display" id="videoSpeedValue">1.0x</span>
     </div>
   </div>
+  
+  <button id="resetButton" class="reset-button">恢復預設設置</button>
   
   <div class="status" id="status"></div>
   
