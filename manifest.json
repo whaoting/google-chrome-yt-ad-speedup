@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube 廣告加速器",
+  "version": "1.0",
+  "description": "自動加速 YouTube 廣告播放速度，廣告結束後恢復正常播放速度",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["*://*.youtube.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon/icon16.png",
+      "48": "icon/icon48.png",
+      "128": "icon/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon/icon16.png",
+    "48": "icon/icon48.png",
+    "128": "icon/icon128.png"
+  }
+} 

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube 廣告加速器</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 300px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      margin: 0;
+    }
+    
+    h1 {
+      font-size: 18px;
+      color: #cc0000;
+      margin-top: 0;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    
+    .setting-group {
+      margin-bottom: 15px;
+      padding: 15px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .setting-group:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .slider-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    input[type="range"] {
+      flex-grow: 1;
+      margin-right: 10px;
+      height: 5px;
+      -webkit-appearance: none;
+      background: #e0e0e0;
+      border-radius: 5px;
+      outline: none;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      background: #cc0000;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+    
+    .value-display {
+      min-width: 50px;
+      text-align: center;
+      font-weight: bold;
+      background-color: #cc0000;
+      color: white;
+      padding: 5px 8px;
+      border-radius: 15px;
+      font-size: 14px;
+    }
+    
+    .status {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 12px;
+      color: #4CAF50;
+      font-weight: bold;
+      height: 20px;
+      transition: opacity 0.5s ease;
+    }
+    
+    .footer {
+      margin-top: 20px;
+      font-size: 11px;
+      color: #999;
+      text-align: center;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+    }
+    
+    /* 添加動畫效果 */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .setting-group:nth-child(1) {
+      animation: fadeIn 0.3s ease-out;
+    }
+    
+    .setting-group:nth-child(2) {
+      animation: fadeIn 0.3s ease-out 0.1s forwards;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>YouTube 廣告加速器</h1>
+  
+  <div class="setting-group">
+    <label for="adSpeed">廣告播放速度</label>
+    <div class="slider-container">
+      <input type="range" id="adSpeed" min="1" max="16" step="0.5" value="2">
+      <span class="value-display" id="adSpeedValue">2.0x</span>
+    </div>
+  </div>
+  
+  <div class="setting-group">
+    <label for="videoSpeed">影片播放速度</label>
+    <div class="slider-container">
+      <input type="range" id="videoSpeed" min="0.25" max="2" step="0.25" value="1">
+      <span class="value-display" id="videoSpeedValue">1.0x</span>
+    </div>
+  </div>
+  
+  <div class="status" id="status"></div>
+  
+  <div class="footer">
+    YouTube 廣告加速器 v1.0
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 
